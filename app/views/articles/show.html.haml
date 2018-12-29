@@ -1,10 +1,11 @@
+%h1 #{t '.title'}
 %p
-  %strong Title:
+  %strong #{t '.title2'}:
   = @article.title
 %p
-  %strong Text:
+  %strong #{t '.text'}:
   = @article.text
 
-= link_to "一覧へ戻る", articles_path
+= link_to t('articles.return_to_list'), articles_path
 |
-= link_to "編集", edit_article_path
+= link_to t('.edit'), edit_article_path
