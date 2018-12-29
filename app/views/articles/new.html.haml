@@ -1,0 +1,13 @@
+%h1 Article New
+= form_with scope: :article, url: articles_path, local:true do |form|
+  %p
+    = form.label :title
+    = form.text_field :title
+  %p
+    = form.label :text
+    = form.text_area :text
+
+  %p
+    = form.submit
+
+= link_to "一覧へ戻る", articles_path

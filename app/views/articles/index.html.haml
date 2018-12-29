@@ -1,0 +1,15 @@
+%h1 Listing articles
+
+= link_to "新規作成", new_article_path
+
+%table
+  %tr
+    %th Title
+    %th Text
+    %th
+  - @articles.each do |article|
+    %tr
+      %td #{article.title}
+      %td #{article.text}
+      %td
+        =link_to '表示', article_path(article)
