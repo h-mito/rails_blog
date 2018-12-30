@@ -1,0 +1,18 @@
+= form_with(model: [article, comment.nil? ? article.comments.build : comment], local: true ) do |form|
+  - if !@comment.nil? && @comment.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@comment.errors.count, "error")
+      %ul
+        - @comment.errors.full_messages.each do |msg|
+          %li #{msg}
+  %p
+    = form.label :commenter
+    %br
+    = form.text_field :commenter
+  %p
+    = form.label :body
+    %br
+    = form.text_area :body
+  %p
+    = form.submit

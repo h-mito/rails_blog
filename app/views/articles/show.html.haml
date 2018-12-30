@@ -6,6 +6,13 @@
   %strong #{t '.text'}:
   = @article.text
 
+%h2 Comments
+= render @article.comments
+
+
+%h2 Add a comment
+= render partial: "comments/form", locals: {article: @article, comment: @comment}
+
 = link_to t('articles.return_to_list'), articles_path
 |
-= link_to t('.edit'), edit_article_path
+= link_to t('.edit'), edit_article_path(@article)
